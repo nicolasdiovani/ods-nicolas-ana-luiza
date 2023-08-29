@@ -8,12 +8,22 @@ import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnODS1, btnODS2, btnODS3, btnODS4, btnODS5, btnODS6;
+    Button btnODS1, btnODS2, btnODS3, btnODS4, btnODS5, btnODS6, voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // botao voltar
+        voltar = findViewById(R.id.voltar);
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent activity_main = new Intent( getApplicationContext(), MainActivity.class);
+                startActivity(activity_main);
+            }
+        });
 
         // botao 1
         btnODS1 = findViewById(R.id.btnODS1);
